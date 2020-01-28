@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   /* 'Desenha' a tela */
-  render() {   
+  render() {
     const name = this.state.user.name 
     let userProfile;
     if( this.state.loading === true)  {
