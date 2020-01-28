@@ -51,31 +51,6 @@ class UserData extends React.Component {
             });
         }, 500);
     }
-    // infinite scrolling
-    fetchMoreData = () => {
-        if (this.state.hasMore === true) {
-            let num = this.state.nextDataPage;
-            setTimeout(() => {
-                fetch(`${this.props.data}?page=${num}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.length > 0) {
-                            this.setState((prevState) => ({
-                                hasMore: true,
-                                nextDataPage: num + 1,
-                                data: prevState.data.concat(data)
-                            }))
-                        } else {
-                            this.setState({
-                                hasMore: false,
-                                nextDataPage: 2,
-
-                            })
-                        }
-                    })
-            }, 500);
-        }
-    }
 
 
     render() {

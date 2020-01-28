@@ -19,11 +19,11 @@ class App extends Component {
     })
     const name = this.refs.name.value;
 
+    /* Estrutura que reebe o retorno da API */
     setTimeout( () => {
       fetch(`http://api.github.com/users/${name}`)
       .then(response => response.json())
       .then(data => {
-
         this.setState({
           user: data,
           loading: false
@@ -32,7 +32,7 @@ class App extends Component {
     },1000)
   }
 
-  /* Desenha a tela */
+  /* 'Desenha' a tela */
   render() {   
     const name = this.state.user.name 
     let userProfile;
